@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>УчастокЧист - Профессиональная обработка участка от вредителей</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #3c775b 0%, #2f644a 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between            <img class="service-image" loading="lazy" src="images/komar.jpg" alt="Обработка от комаров">            <img class="service-image" loading="lazy" src="images/komar.jpg" alt="Обработка от комаров">;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.85;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(60,119,91,0.85) 0%, rgba(47,100,74,0.85) 100%), url('images/hero-bg.svg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(20, 40, 25, 0.4);
+            z-index: 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.35);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .price-note {
+            display: inline-block;
+            background: rgba(255,255,255,0.18);
+            color: white;
+            padding: 0.75rem 1.2rem;
+            border-radius: 999px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #f8f9fa;
+            color: #2f644a;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.18);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.22);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .hero-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.35);
+            color: white;
+            padding: 0.9rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .hero-secondary:hover {
+            background: rgba(255,255,255,0.26);
+            transform: translateY(-1px);
+        }
+
+        .service-image,
+        .gallery-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .review-stars {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.15rem;
+            color: #f0b429;
+            margin-bottom: 1rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .photo-card p {
+            padding: 1rem 1.25rem 1.5rem;
+            margin: 0;
+            color: #4d4d4d;
+            line-height: 1.7;
+        }
+
+        .service-card h3 {
+            color: #3c775b;
+            margin-bottom: 0.5rem;
+        }
+
+        .features {
+            background: #f4f7f4;
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            border-left: 4px solid #3c775b;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+        }
+
+        .feature-item h4 {
+            color: #3c775b;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            background: #eef5ed;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            color: #3c775b;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #3c775b;
+            color: white;
+            padding: 0.9rem 1.2rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .contact-button:hover {
+            background: #2f644a;
+            transform: translateY(-1px);
+        }
+
+        .contact-button span {
+            font-size: 1.2rem;
+        }
+
+        .faq {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: #3c775b;
+        }
+
+        .faq-item p {
+            color: #4d4d4d;
+            line-height: 1.75;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #3c775b;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #3c775b;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: #4d4d4d;
+            line-height: 1.8;
+        }
+
+        /* Features Section */
+        .features {
+            background: #f4f7f4;
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .features-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            border-left: 4px solid #3c775b;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+        }
+
+        .feature-item h4 {
+            color: #3c775b;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info {
+            background: #eef5ed;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            color: #3c775b;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-item-icon {
+            font-size: 1.5rem;
+            color: #3c775b;
+            margin-top: 0.25rem;
+        }
+
+        .contact-item p {
+            margin: 0;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3c775b;
+            box-shadow: 0 0 5px rgba(60, 119, 91, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #3c775b 0%, #2f644a 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(60, 119, 91, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🌿 УчастокЧист</div>
+            <ul>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Защитите ваш участок от клещей, комаров, тли и муравьев</h1>
+            <p>Экспертная обработка участка с гарантией результата. Быстро, безопасно для семьи и домашних животных.</p>
+            <div class="price-note">Цены от 490 ₽ за обработку</div>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Заказать обработку</a>
+                <a href="tel:+79217774455" class="hero-secondary">Позвонить +7 921 777-44-55</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img class="service-image" loading="lazy" src="images/mosquito.svg" alt="Обработка от комаров">
+                <h3>Обработка от комаров</h3>
+                <p>Избавиться от надоедливых комаров на долгое время. Эффективное уничтожение личинок и взрослых особей.</p>
+            </div>
+            <div class="service-card">
+                <img class="service-image" loading="lazy" src="images/tick.svg" alt="Защита от клещей">
+                <h3>Защита от клещей</h3>
+                <p>Полная защита участка от клещей и других паразитов. Используем безопасные для людей препараты.</p>
+            </div>
+            <div class="service-card">
+                <img class="service-image" loading="lazy" src="images/aphid.svg" alt="Избавление от тли">
+                <h3>Избавление от тли</h3>
+                <p>Спасаем ваши растения от тли. Экологичные методы обработки садов и огородов.</p>
+            </div>
+            <div class="service-card">
+                <img class="service-image" loading="lazy" src="images/ants.svg" alt="Уничтожение муравьев">
+                <h3>Уничтожение муравьев</h3>
+                <p>Эффективная борьба с муравейниками. Предотвращение повторного появления на участке.</p>
+            </div>
+            <div class="service-card">
+                <img class="service-image" loading="lazy" src="images/diagnostics.svg" alt="Комплексная диагностика">
+                <h3>Комплексная диагностика</h3>
+                <p>Полное обследование участка для выявления всех типов вредителей и оптимального плана лечения.</p>
+            </div>
+            <div class="service-card">
+                <img class="service-image" loading="lazy" src="images/prevention.svg" alt="Профилактическое обслуживание">
+                <h3>Профилактическое обслуживание</h3>
+                <p>Регулярные обработки для предотвращения появления вредителей в течение всего сезона.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="features" id="advantages">
+        <div class="features-content">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>✓ Опытные специалисты</h4>
+                    <p>Команда профессионалов с 15+ годами опыта в дезинсекции</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✓ Безопасные препараты</h4>
+                    <p>Используем только сертифицированные и экологичные средства</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✓ Гарантия результата</h4>
+                    <p>Гарантируем избавление от вредителей на 100%</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✓ Быстрый результат</h4>
+                    <p>Видимый эффект уже через 24 часа после обработки</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✓ Справедливые цены</h4>
+                    <p>Доступные расценки без скрытых платежей</p>
+                </div>
+                <div class="feature-item">
+                    <h4>✓ Круглосуточное обслуживание</h4>
+                    <p>Готовы помочь в любой день и час</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="services" id="reviews">
+        <h2 class="section-title">Отзывы клиентов</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="review-stars">★★★★★</div>
+                <p>«Быстро приехали, всё сделали как обещали. После обработки участок стал безопаснее, комаров почти нет.»</p>
+                <h3>Ольга, Санкт-Петербург</h3>
+            </div>
+            <div class="service-card">
+                <div class="review-stars">★★★★★</div>
+                <p>«Отличная работа! За 2 дня исчезли муравьи и тля на цветнике. Рекомендую всем.»</p>
+                <h3>Алексей, Москва</h3>
+            </div>
+            <div class="service-card">
+                <div class="review-stars">★★★★★</div>
+                <p>«Очень аккуратные специалисты, удобно связываться через WhatsApp. Работа выполнена быстро и без запаха.»</p>
+                <h3>Марина, Московская область</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2 class="section-title">Часто задаваемые вопросы</h2>
+        <div class="services-grid">
+            <div class="faq-item">
+                <h4>Сколько стоит обработка?</h4>
+                <p>Минимальная стоимость услуги — от 490 ₽. Точная цена зависит от площади участка и выбранного типа обработки.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Насколько безопасны средства?</h4>
+                <p>Мы используем только сертифицированные препараты, безопасные для людей, детей и домашних животных при соблюдении инструкции.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Сколько длится эффект?</h4>
+                <p>Эффект обычно сохраняется до нескольких недель, а профилактические обработки позволяют держать участок в чистоте круглый сезон.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="services" id="gallery">
+        <h2 class="section-title">Наши работы и результаты</h2>
+        <div class="photo-grid">
+            <div class="photo-card">
+                <img class="gallery-image" loading="lazy" src="images/clean-yard.svg" alt="Чистый обработанный участок">
+                <p>Чистый безопасный участок после обработки — для отдыха и игр без риска укусов.</p>
+            </div>
+            <div class="photo-card">
+                <img class="gallery-image" loading="lazy" src="images/healthy-garden.svg" alt="Сад без вредителей">
+                <p>Здоровый сад без вредителей — работа, которая сохраняет урожай и красоту растений.</p>
+            </div>
+            <div class="photo-card">
+                <img class="gallery-image" loading="lazy" src="images/team.svg" alt="Профессиональные сотрудники">
+                <p>Специалисты высокого уровня с профессиональным оборудованием и аккуратной обработкой.</p>
+            </div>
+            <div class="photo-card">
+                <img class="gallery-image" loading="lazy" src="images/spraying.svg" alt="Профилактическая обработка участка">
+                <p>Профилактическая обработка для надёжной защиты участка в сезоне.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Свяжитесь с нами</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Контактная информация</h3>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <div>
+                        <p><strong>Телефон:</strong></p>
+                        <p><a href="tel:+79217774455">+7 921 777-44-55</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">💬</div>
+                    <div>
+                        <p><strong>WhatsApp:</strong></p>
+                        <p><a href="https://wa.me/79217774455" target="_blank" rel="noreferrer">Написать в WhatsApp</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">✈️</div>
+                    <div>
+                        <p><strong>Telegram:</strong></p>
+                        <p><a href="https://t.me/rodion_pro" target="_blank" rel="noreferrer">Написать в Telegram</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <div>
+                        <p><strong>Адрес:</strong></p>
+                        <p>Москва и область, готовы к выезду на 50 км</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">⏰</div>
+                    <div>
+                        <p><strong>Время работы:</strong></p>
+                        <p>Круглосуточно, 7 дней в неделю</p>
+                    </div>
+                </div>
+                <div class="contact-links">
+                    <a href="https://wa.me/79217774455" class="contact-button" target="_blank" rel="noreferrer"><span>💬</span>WhatsApp</a>
+                    <a href="https://t.me/uchastokchist" class="contact-button" target="_blank" rel="noreferrer"><span>✈️</span>Telegram</a>
+                </div>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 УчастокЧист. Все права защищены. | Профессиональная защита участков от вредителей</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за обращение! Мы свяжемся с вами в ближайшее время.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
